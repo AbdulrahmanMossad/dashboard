@@ -1,0 +1,19 @@
+import { useTheme } from "@emotion/react";
+import { Box, Typography } from "@mui/material";
+
+const Header = ({ title, subTitle, isDashboard=false }) => {
+  const theme = useTheme();
+  return (
+    <Box mb={isDashboard?0:4}>
+      <Typography
+        sx={{ color: theme.palette.info.light, fontWeight: "bold" }}
+        variant="h5"
+      >
+        {title}
+      </Typography>
+      <Typography variant="body1">{subTitle}</Typography>
+    </Box>
+  );
+};
+
+export default Header;
